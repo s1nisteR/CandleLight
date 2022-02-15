@@ -1,7 +1,9 @@
 cmake_minimum_required(VERSION 3.21)
+cmake_policy(SET CMP0126 NEW)
 project(CandleLight)
 
 set(CMAKE_CXX_STANDARD 17)
+
 
 include_directories(include src thirdparty/uriparser/include thirdparty/cpr/include thirdparty/lexbor/source/)
 
@@ -12,7 +14,7 @@ set(BUILD_SHARED_LIBS OFF)
 add_subdirectory(thirdparty/uriparser)
 
 
-option(LEXBOR_BUILD_SHARED OFF)
+set(LEXBOR_BUILD_SHARED OFF)
 add_subdirectory(thirdparty/lexbor)
 
 
