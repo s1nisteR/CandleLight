@@ -1,0 +1,9 @@
+[submodule "thirdparty/uriparser"]
+	path = thirdparty/uriparser
+	url = https://github.com/uriparser/uriparser.git
+[submodule "thirdparty/cpr"]
+	path = thirdparty/cpr
+	url = https://github.com/libcpr/cpr.git
+[submodule "thirdparty/lexbor"]
+	path = thirdparty/lexbor
+	url = https://github.com/lexbor/lexbor.git
