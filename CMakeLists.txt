@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.21)
 cmake_policy(SET CMP0126 NEW)
+cmake_policy(SET CMP0077 NEW)
 project(CandleLight)
 
 set(CMAKE_CXX_STANDARD 17)
