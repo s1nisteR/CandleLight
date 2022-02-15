@@ -8,14 +8,14 @@ set(CMAKE_CXX_STANDARD 17)
 
 include_directories(include src thirdparty/uriparser/include thirdparty/cpr/include thirdparty/lexbor/source/)
 
-set(URIPARSER_BUILD_TESTS OFF)
-set(URIPARSER_BUILD_DOCS OFF)
-set(URIPARSER_ENABLE_INSTALL ON)
-set(BUILD_SHARED_LIBS OFF)
+set(URIPARSER_BUILD_TESTS OFF CACHE BOOL "Disable build tests" FORCE)
+set(URIPARSER_BUILD_DOCS OFF CACHE BOOL "Do not build docs" FORCE)
+set(URIPARSER_ENABLE_INSTALL ON CACHE BOOL "Do not install" FORCE)
+set(BUILD_SHARED_LIBS OFF CACHE BOOL "Do not build as a shared library" FORCE)
 add_subdirectory(thirdparty/uriparser)
 
 
-set(LEXBOR_BUILD_SHARED OFF)
+set(LEXBOR_BUILD_SHARED OFF CACHE BOOL "Do not build as a shared library" FORCE)
 add_subdirectory(thirdparty/lexbor)
 
 
