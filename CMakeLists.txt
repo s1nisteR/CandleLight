@@ -9,11 +9,15 @@ set(URIPARSER_BUILD_TESTS OFF)
 set(URIPARSER_BUILD_DOCS OFF)
 set(URIPARSER_ENABLE_INSTALL ON)
 set(BUILD_SHARED_LIBS OFF)
-
 add_subdirectory(thirdparty/uriparser)
-add_subdirectory(thirdparty/cpr)
+
+
+option(LEXBOR_BUILD_SHARED OFF)
 add_subdirectory(thirdparty/lexbor)
 
 
+add_subdirectory(thirdparty/cpr)
+
+
 add_executable(CandleLight src/main.cpp src/clURI.cpp)
-target_link_libraries(CandleLight PUBLIC uriparser cpr lexbor)
+target_link_libraries(CandleLight PUBLIC uriparser cpr lexbor_static)
