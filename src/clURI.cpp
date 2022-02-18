@@ -8,7 +8,7 @@ clURI::clURI(std::string t_uri) : m_uri(std::move(t_uri))
 {
     UriParserStateA state;
     state.uri = &m_uriParse;
-    m_isValid = uriParseUriA(&state, m_uri.c_str()) == URI_SUCCESS;
+    m_isValid = (uriParseUriA(&state, m_uri.c_str()) == URI_SUCCESS);
 }
 
 bool clURI::isValid() const

@@ -19,6 +19,7 @@ namespace CandleLight
         [[nodiscard]] std::string path() const { return fromList(m_uriParse.pathHead, "/"); }
         [[nodiscard]] std::string query() const { return fromRange(m_uriParse.query); }
         [[nodiscard]] std::string fragment() const { return fromRange(m_uriParse.fragment); }
+        [[nodiscard]] std::string getOriginalUrl() const { return this->m_uri; }
     private:
         std::string m_uri;
         UriUriA  m_uriParse{};

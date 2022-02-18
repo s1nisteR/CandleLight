@@ -7,3 +7,6 @@
 [submodule "thirdparty/lexbor"]
 	path = thirdparty/lexbor
 	url = https://github.com/lexbor/lexbor.git
+[submodule "thirdparty/termcolor"]
+	path = thirdparty/termcolor
+	url = https://github.com/ikalnytskyi/termcolor.git

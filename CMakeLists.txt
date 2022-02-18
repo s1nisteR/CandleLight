@@ -6,7 +6,7 @@ project(CandleLight)
 set(CMAKE_CXX_STANDARD 17)
 
 
-include_directories(include src thirdparty/uriparser/include thirdparty/cpr/include thirdparty/lexbor/source/)
+include_directories(include src thirdparty/uriparser/include thirdparty/cpr/include thirdparty/lexbor/source/ thirdparty/termcolor/include)
 
 set(URIPARSER_BUILD_TESTS OFF CACHE BOOL "Disable build tests" FORCE)
 set(URIPARSER_BUILD_DOCS OFF CACHE BOOL "Do not build docs" FORCE)
@@ -22,5 +22,5 @@ add_subdirectory(thirdparty/lexbor)
 add_subdirectory(thirdparty/cpr)
 
 
-add_executable(CandleLight src/main.cpp src/clURI.cpp)
+add_executable(CandleLight src/main.cpp src/clURI.cpp src/clParser.cpp src/clParser.h)
 target_link_libraries(CandleLight PUBLIC uriparser cpr lexbor_static)
