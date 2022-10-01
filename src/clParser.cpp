@@ -26,7 +26,8 @@ std::vector<std::string> clParser::clParseLinks(const std::string& html)
     status = lxb_html_document_parse(document, htmlForParser, htmlLen);
     if(status != LXB_STATUS_OK)
     {
-        //TODO: Handle Errors
+        std::cout << "Could not parse html document. Aborting..." << std::endl;
+        std::abort();
     }
     //TODO: what about <iframe src=.... links?
     lxb_dom_elements_by_tag_name(lxb_dom_interface_element(document->body), collection, (const lxb_char_t*)"a", 1);
@@ -35,7 +36,6 @@ std::vector<std::string> clParser::clParseLinks(const std::string& html)
         auto node = lxb_dom_collection_node(collection, i);
         auto attr = lxb_dom_element_attr_by_name(lxb_dom_interface_element(node), (const lxb_char_t* )"href", 4);
         link = reinterpret_cast<const char*>(lxb_dom_attr_value(attr, nullptr));
-        //std::cout << link << std::endl;
 
         if(std::regex_match(link, std::regex("(http|https)://([^/ :]+):?([^/ ]*)(/?[^ #?]*)\\x3f?([^ #]*)#?([^ ]*)")))
         {
